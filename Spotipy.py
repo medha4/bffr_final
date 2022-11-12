@@ -9,11 +9,6 @@ import spotipy.util as util
 
 
 def main():
-    # auth_manager = SpotifyClientCredentials(client_id="ddad18f0d51242c8aa54f0ccb23b1ac7", client_secret="0f1fbfee491a47c5bfbfdce3b3f7a138")
-    # util.prompt_for_user_token(username, scope, client_id='your-spotify-client-id',
-    #                            client_secret='your-spotify-client-secret', redirect_uri='your-app-redirect-url')
-    # SpotifyOAuth(client_id="ddad18f0d51242c8aa54f0ccb23b1ac7", client_secret='0f1fbfee491a47c5bfbfdce3b3f7a138', redirect_uri='http://localhost:9000', scope='user-library-read')
-
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=cred.client_ID, client_secret=cred.client_SECRET, redirect_uri='http://localhost:8000', scope='user-read-recently-played user-modify-playback-state user-read-currently-playing', username='shreymittal')
 )
 
