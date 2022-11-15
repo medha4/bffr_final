@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body{
   background-color: #111111;
@@ -101,10 +102,21 @@ body{
     width: 100%;
   }
 
+  .mainContainer {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .loginContainer{
     position: relative;
     width: 40%;
-    height: 30%;
+    height: 35%;
 
     display: flex;
     flex-direction: column;
@@ -117,15 +129,16 @@ body{
     backdrop-filter: blur(25px);
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 40px;
+    margin-top: 70px;
   }
 
   form{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: start;
     color: white; 
-    width: 100%;
-    height: auto;
-    align-items: center;
+    width: 70%;
   }
 
   label{
@@ -140,28 +153,45 @@ body{
   }
 
   .phoneInput{
-    width: 70%;
+    width: 100%;
     height: 50px;
     background: rgba(80, 80, 80, 0.5);
     outline: none;
-    border-radius: 70px; 
+    border: none;
+    border-radius: 30px; 
+    padding-left: 29px;
+    font-size:25px;
+    margin-top: -10px;
+    font-family: 'Inter';
+    font-weight: 400;
+
   }
+
+  .phoneInput, select, textarea{
+    color: white;
+  }
+
+  textarea:focus, .phoneInput:focus {
+    color: white;
+  }
+
 
   .submitButton{
-    width: 50%;
-    height: 30px;
+    width: 60%;
+    height: 50px;
     border-radius: 70px;
-  }
-
-  .mainContainer {
-    display: flex;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
+    background: linear-gradient(90deg, #9617DD 0%, #D60BCD 100%);
+    border-radius: 70px;
+    outline: none;
+    border: none;
+    margin: auto;
+    margin-top: 20px;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .title {
@@ -194,3 +224,24 @@ body{
     font-family: 'Inter', sans-serif;
     font-weight: 700;
   }
+
+  .numberTxt{
+    font-family: 'Inter';
+    font-weight: 600;
+    margin-left: 20px;
+  }
+
+  .createAccountTxt{
+    margin-top: 70px;
+    color: white;
+    font-family: 'inter';
+    font-weight: 600;
+  }
+
+  a:visited{
+    color: white;
+  }
+
+
+
+

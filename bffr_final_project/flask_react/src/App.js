@@ -4,10 +4,21 @@ import axios from "axios";
 import logo from './logo.svg';
 import './App.css';
 
+import 'intl-tel-input/build/css/intlTelInput.css';
+import intlTelInput from 'intl-tel-input';
+
+import ReactIntlTelInput from 'react-intl-tel-input-v2';
+
 function App() {
 
    // new line start
   const [profileData, setProfileData] = useState(null)
+  const [userNumber, setUserNumber] = useState("000-000-0000")
+
+  function updateNumber(evt){
+    setUserNumber(evt)
+    console.log(userNumber)
+  }
 
   function getData() {
     axios({
@@ -27,6 +38,19 @@ function App() {
         }
     })}
     //end of new line 
+
+    const inputProps = {
+      placeholder: 'ReactIntlTelInput',
+    };
+   
+    const intlTelOpts = {
+      preferredCountries: ['cn'],
+    };
+   
+    const value = { iso2: 'cn', dialCode: '86', phone: '12345678901' };
+   
+    const onChange = value => console.log(value);
+    const onReady = (instance, IntlTelInput) => console.log(instance, IntlTelInput);
 
   return (
     <div class="App">
@@ -51,12 +75,22 @@ function App() {
 
         <div class="loginContainer"> 
           <form>
-            <h1 class = "numberTxt"> Phone Number </h1>
-            <input class = "phoneInput" type="tel" name="name" />
+            <h2 class = "numberTxt"> Phone Number </h2>
 
-            <input class = "submitButton" type="submit" value="Submit" />
+            <input class = "phoneInput" type="tel" name="name" placeholder="000-000-0000"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12" onChange={evt => updateNumber(evt)}/>
+
+            <input class = "submitButton" type="submit" value="Log In -->" />
+            <p value={userNumber}></p>
           </form>
         </div>
+
+       
+          <h2 class = "createAccountTxt"> 
+            <a href="/signUp.js" style={{textDecoration: 'none'}}>
+          New here? Sign Up
+            </a>
+          </h2>
 
       </div>
 
