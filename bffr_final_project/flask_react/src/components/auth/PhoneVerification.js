@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Component from 'react';
 import axios from "axios";
 import './PhoneVerification.css';
-import {Routes, Route, useLocation} from 'react-router-dom'
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom'
 import ReactCodeInput from 'react-code-input';
 
 
@@ -18,6 +18,12 @@ function PhoneVerification() {
   const {state} = useLocation()
   const {number, name} = state
   const numLast4 = number.substring(6,10)
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{
+    let path = '../feed'; 
+    navigate(path);
+  }
 
   function updateNumber(evt){
     setUserNumber(evt)
@@ -115,7 +121,7 @@ function PhoneVerification() {
 
             <ReactCodeInput class ="codeInput" type='number' fields={5} {...props}/>
 
-            <input class = "submitButton" type="submit" value="Log In -->" />
+            <input class = "submitButton" type="submit" onClick={routeChange} value="Log In -->" />
             
           </form>
         </div>

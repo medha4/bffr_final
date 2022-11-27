@@ -6,9 +6,10 @@ import {Routes, Route} from 'react-router-dom'
 
 import 'intl-tel-input/build/css/intlTelInput.css';
 
-import LogIn from './components/LogIn'
-import SignUp from './components/SignUp'
-import PhoneVerification from './components/PhoneVerification'
+import LogIn from './components/auth/LogIn'
+import SignUp from './components/auth/SignUp'
+import PhoneVerification from './components/auth/PhoneVerification'
+import Feed from './components/feed/Feed'
 
 
 function App(){
@@ -60,6 +61,8 @@ function App(){
       <Route path="/" element={<LogIn />}> </Route>
       <Route path="sign-up" element={<SignUp />}> </Route>
       <Route path="phone-verify" element={<PhoneVerification />}> </Route>
+      <Route path="feed" element={<Feed />}> </Route>
+
 
     </Routes>
     </>
